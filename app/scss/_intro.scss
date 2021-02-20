@@ -1,0 +1,79 @@
+.intro {
+    position: relative;
+    overflow: hidden;
+    margin-top: 100px;
+    margin-bottom: 60px;
+
+    @include breakpoint-up(large) {
+        margin-top: 160px;
+    }
+
+    &__img {
+        display: block;
+        margin: auto;
+        height: 224px;
+        width: 300px;
+        min-width: auto;
+        background-image: url('./images/mobile/image-interactive.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        @include breakpoint-up(medium) {
+            //margin: 0px;
+            height: 400px;
+            width: 582px;
+            background-image: url('./images/desktop/image-interactive.jpg');
+        }
+
+        @include breakpoint-up(large) {
+            height: 500px;
+            width: 732px;
+            margin: 0px;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        background-color: #fff;
+        margin: 38px auto 20px auto;
+        width: 268px; 
+        min-width: auto;
+
+        @include breakpoint-up(medium) {
+            width: 500px;
+
+        }
+        
+        @include breakpoint-up(large) {
+            min-width: auto;
+            padding: 90px;
+            text-align: start;
+            position: absolute;
+            top: 156px;
+            left: 604px;   
+        }
+
+        h1 {
+            
+            font-size: 1.6rem;
+            margin: 22px auto;
+
+            @include breakpoint-up(large) {
+                margin: 0;
+                width: 320px;
+                font-size: 2.4rem;
+            }
+        }
+
+        p {
+            margin: auto;
+            font-size: 12px;
+            color: $VeryDarkGray;
+
+            @include breakpoint-up(large) {
+                margin: 0;
+                width: 320px;
+            }
+        }
+    }
+}

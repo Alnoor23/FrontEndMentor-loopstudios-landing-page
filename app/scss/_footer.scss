@@ -1,0 +1,80 @@
+.footer {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    margin-top: 80px;
+
+    @include breakpoint-up(large) {
+        height: 174px;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include breakpoint-up(large) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            //grid-template-rows: 50%;
+            grid-template-areas: "logo . social"
+                                 "links . copyright";
+        }
+
+        &__logo {
+            margin: 30px auto 10px auto;
+
+            @include breakpoint-up(large) {
+                grid-area: logo;
+                margin: 50px auto 20px 24px;
+
+            }
+        }
+
+        &__link-wrap {
+            :not(:last-child) {
+                margin: 18px auto;
+            }
+
+            &__link {
+                display: block;
+                text-align: center;
+            }
+
+            @include breakpoint-up(large) {
+                grid-area: links;
+                display: flex;
+                
+                :not(:last-child) {
+                    margin: 18px auto;
+                }
+                :last-child {
+                    margin: 18px auto;
+                }
+            }
+        }
+
+        &__social {
+            margin: 20px auto 0px auto;
+            
+            img {
+                margin: 4px;
+            }
+
+            @include breakpoint-up(large) {
+                grid-area: social;
+                margin: 50px 24px 20px auto;
+            }
+        }
+
+        &__copyright {
+            color: $DarkGray;
+            margin-bottom: 30px;
+
+            @include breakpoint-up(large) {
+                grid-area: copyright;
+                margin: 0px 24px 20px auto;
+            }
+        }
+    }
+}
